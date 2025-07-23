@@ -1,7 +1,8 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  darkMode: ['class'],
+  //darkMode: ['class'],
+  darkMode: false,
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -12,6 +13,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-geist)'],
         mono: ['var(--font-geist-mono)'],
+        jjSans: ['"Helvetica Neue"', 'Arial', 'sans-serif'], // ✅ Added for J&J
       },
       screens: {
         'toast-mobile': '600px',
@@ -24,6 +26,11 @@ const config: Config = {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+
+        // ✅ Added J&J Brand Colors
+        jjRed: '#D91A2A',
+        jjGray: '#F5F5F5',
+
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
@@ -77,4 +84,5 @@ const config: Config = {
   },
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 };
+
 export default config;
